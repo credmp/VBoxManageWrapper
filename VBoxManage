@@ -1,0 +1,16 @@
+#!/bin/bash
+
+newargs=""
+
+while [ $# -gt 0 ]
+do
+    if [ "$1" = "--synthcpu" ];
+    then
+        shift; # remove option
+        shift; # remove argument
+    fi
+    newargs+=" $1"
+    shift;
+done
+
+/usr/local/bin/VBoxManage $newargs
